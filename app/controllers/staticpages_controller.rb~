@@ -6,4 +6,9 @@ class StaticpagesController < ApplicationController
   end
   def about
   end
+  def contact
+  end
+def match
+end
+
 end

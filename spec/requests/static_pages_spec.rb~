@@ -1,39 +1,45 @@
 require 'spec helper'
 describe "Static pages" do
-describe "Home page" do
-it "should have the h1 'Sample App'" do
-visit '/static pages/home'
-page.should have selector('h1', :text => 'Sample App')
-end
-it "should have the title 'Home'" do
-visit '/static pages/home'
-page.should have selector('title',
-:text => "Ruby on Rails Tutorial Sample App | Home")
-end
-end
-describe "Help page" do
-it "should have the h1 'Help'" do
-visit '/static pages/help'
-page.should have selector('h1', :text => 'Help')
-end
-it "should have the title 'Help'" do
-visit '/static pages/help'
-page.should have selector('title',
-:text => "Ruby on Rails Tutorial Sample App | Help")
-end
+subject {page}
+  describe "Home page" do
+before {visit root_path}
+    it { should have_selector('h1', text: 'Sample1_App') }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector 'title', text: '| Home' }
+  end
+  describe "Help page" do
+    before { visit help_path }
+it { should have_selector('h1', text: 'Help') }
+it { should have_selector('title', text: full_title('Help')) }
 end
 describe "About page" do
-it "should have the h1 'About Us'" do
-visit '/static pages/about'
-page.should have selector('h1', :text => 'About Us')
+before { visit about_path }
+it { should have_selector('h1', text: 'About') }
+it { should have_selector('title', text: full_title('About Us')) }
 end
-it "should have the title 'About Us'" do
-visit '/static pages/about'
-page.should have selector('title',
-:text => "Ruby on Rails Tutorial Sample App | About Us")
+describe "Contact page" do
+before { visit contact_path }
+it { should have_selector('h1', text: 'Contact') }
+it { should have_selector('title', text: full_title('Contact')) }
 end
 end
-end
+
+    
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
