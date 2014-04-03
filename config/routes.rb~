@@ -1,10 +1,10 @@
 Sample1App::Application.routes.draw do
   get "users/new"
  root to: 'staticpages#home'
- match '/signup', to: 'users#new',via: :any
- match '/help',   to: 'staticpages#help',via: :any
- match '/about',  to: 'staticpages#about', via: :any
- match '/contact',to: 'staticpages#contact', via: :any
+ match '/signup', to: 'users#new',via: :get
+ match '/help',   to: 'staticpages#help',via: :get
+ match '/about',  to: 'staticpages#about', via: :get
+ match '/contact',to: 'staticpages#contact', via: :get
 
  
 	
