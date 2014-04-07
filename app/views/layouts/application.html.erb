@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-
-  </head>
+  <
   <body>
-    <%= render :partial => 'shared/shim' %>
-    <%= render :partial => 'shared/header' %>
+    <%= render  'shared/header' %>
     <div class="container">
       <%= yield %>
       <%= render 'shared/footer' %>

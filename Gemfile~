@@ -2,24 +2,40 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
-gem 'rspec-rails', '~> 3.0.0.beta'
-gem 'guard-rspec', '0.5.5'
-gem 'libnotify', '0.5.9'
-gem 'pg', '0.12.2'
-gem 'guard-spork', '0.3.2'
-gem 'spork', '0.9.0'
 
-gem 'sass-rails', '>= 3.2'
-gem 'bootstrap-sass', '2.0.0'
-#gem 'bootstrap-sass', '~> 3.1.1'
+gem 'libnotify','0.5.9'
+gem 'bootstrap-sass','2.0.0'
+gem 'rake', '0.9.6'
+gem 'protected_attributes'
+gem 'spork', '~> 0.9.2'
+gem 'bcrypt-ruby','~> 3.1.2'
+gem 'jquery-ui-rails'
+gem 'rspec','~>2.13.0'
+
 
 
 # Use sqlite3 as the database for Active Record
+group :development ,:test do
+gem 'annotate','~>2.4.1.beta'
 gem 'sqlite3'
+gem 'rspec-rails', '~> 2.13.0'
+gem 'guard-rspec', '0.5.5'
+gem 'factory_girl', '~> 4.4.0'
+gem 'cucumber-rails','1.2.1',require: false
+
+end
+
+
+group :production do
+gem 'pg'
+end
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-          
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
